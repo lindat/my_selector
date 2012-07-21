@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
-  def index
+  def index # this is localhost:3000/topics so it's really just topics#index in routes
     @topics = Topic.all
 
     respond_to do |format|
@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        format.html { redirect_to topics_path, notice: 'Linda gets 2 cookies' }
         format.json { render json: @topic, status: :created, location: @topic }
       else
         format.html { render action: "new" }
