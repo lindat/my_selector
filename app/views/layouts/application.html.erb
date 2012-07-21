@@ -6,11 +6,25 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<% flash.each do |name, msg| %>
-	<div><%= msg %></div>
-<% end %>
-<%= yield %>
+
+<div class="container">
+	<div class ="span12">	
+		<ul><%= link_to "Home", home_path %> |
+			<%= link_to "About", about_path %> | 
+			<%= link_to "Voting Booth", root_path %></ul>
+		<hr/>
+		<body>
+			<% flash.each do |name, msg| %>
+			<div><%= msg %></div>
+		</div>
+		<% end %>
+
+		<div class="span6">
+			<div class ="well">
+				<%= yield %>
+			</div>
+		</div>
+</div>
 
 </body>
 </html>
